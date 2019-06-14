@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    background-color: dimgray;
     
 }
 
@@ -12,7 +13,42 @@ body {
     width: 70px;
     height: 70px;
     display: inline-block;
-    background-color: white;
+    background-color: dimgray;
     border-radius: 50%;
     margin: 5px;
 }
+
+.newgame {
+    float: left;
+    margin: 50px;
+}
+
+.restart {
+    float: right;
+    margin: 50px;
+}
+
+.scoreboard {
+    margin-left: 65px;
+    margin-right: 55px;
+}
+
+/* .rules {
+    margin-left: 2px;
+    margin-right: 485px;
+    margin-bottom: 20px;
+}
+
+.p1 {
+    position: relative;
+    margin-top: 70px;
+    margin-bottom: 60px;
+    left: 65px;
+    top: -95px;
+}
+
+.p2 {
+    position: relative;
+    left: 229px;
+    top: -182px;  
+} */
