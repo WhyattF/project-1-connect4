@@ -53,6 +53,14 @@ td {
     padding: 15px;
 }
 
+.red {
+    background-color: red;
+   }
+
+.black {
+    background-color: black;
+   }
+
     /* .rules {
     margin-left: 2px;
     margin-right: 485px;

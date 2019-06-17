@@ -14,20 +14,26 @@ class Gamegrid {
             const row = $('<div>')
                 .addClass('row')
                 board.append(row)
-            for (let column = 0; column < this.columns; column++) {
-                const column = $('<div>')
+            for (let columns = 0; columns < this.columns; columns++) {
+                const columns = $('<div>')
                     .addClass('empty column')
+                    .on('click', function() {
+                        let c = ('.empty')
+                        .addClass('red')
+                        .removeClass('empty')
+
+                    })
                 row.append(columns)
             }
             board.append(row)
         }
     }
     //  
-    eventListeners() {
-        let board = $(this.selector)
+    // eventListeners() {
+    //     let board = $(this.selector)
 
-        board.on('mouseenter', '.empty.column', function(){
-            console.log('here', this)
-        })
+    //     board.on('mouseenter', '.empty.column', function(){
+    //     console.log('here',this)
+    //     })
     } 
-}
+
