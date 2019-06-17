@@ -10,11 +10,13 @@ class Gamegrid {
         this.isPlayer1Turn = true
         this.isPlayer2Turn = false                        
         this.executePlayerTurn()
+        this.color= "red"
 
     }
     
     constructGrid() {
-        // Grab DOM element
+        // Grab DOM element 
+        let self = this
         let board = $(this.selector)
         for (let row = 0; row < this.rows; row++) {
             const row = $('<div>')
@@ -22,11 +24,12 @@ class Gamegrid {
                 board.append(row)
             for (let columns = 0; columns < this.columns; columns++) {
                 const column = $('<div></div>')
+               
                     .addClass('empty column')
                     .on('click', function(){
-                        // console.log(this.isPlayer1Turn)
-                        this.executePlayerTurn()
-
+                        $(this).addClass(`${self.color}`).removeClass('empty')
+                        console.log(self.isPlayer1Turn)
+                    self.executePlayerTurn()
                     })
 
                   row.append(column)
@@ -38,16 +41,17 @@ class Gamegrid {
 
     executePlayerTurn() {
         if (this.isPlayer1Turn === true) {
-            $(this).addClass('red').removeClass('empty')
+            
+            this.color = 'red'
             this.isPlayer1Turn = !this.isPlayer1Turn
             this.isPlayer2Turn = !this.isPlayer2Turn
 
-        } else if (
-            this.isPlayer2Turn === true) {
-                $(this).addClass('black').removeClass('empty')
+        } else if (this.isPlayer2Turn === true) {
+                
+                this.color = 'black'
                 this.isPlayer2Turn = !this.isPlayer2Turn
                 this.isPlayer1Turn = !this.isPlayer1Turn
-                // .bind(this)
+                
             }  
         }
 
