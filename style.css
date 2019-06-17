@@ -4,6 +4,10 @@ body {
     
 }
 
+h1 {
+    color: red;
+}
+
 .gamegrid {
     background-color: yellow;
     display: inline-block;
