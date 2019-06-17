@@ -53,9 +53,18 @@ class Gamegrid {
             }  
         }
 
-        // Set up loop make the move check for win 
+        // Set up loop make the move check for win
+        function winner() {
+            verticalWin()
+            horizontalWin()
+            diagnalWinLeft()
+            diagnalWinRight()
 
-        // }
+            return
+        }
+        function verticalWin() {
+            for (let i = 0; i < gamegrid.length; )
+        }
 
         
     }
