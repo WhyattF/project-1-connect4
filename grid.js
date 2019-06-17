@@ -14,9 +14,9 @@ class Gamegrid {
             const row = $('<div>')
                 .addClass('row')
                 board.append(row)
-            for (let columns = 0; columns < this.columns; columns++) {
-                const columns = $('<div>')
-                    .addClass('column')
+            for (let column = 0; column < this.columns; column++) {
+                const column = $('<div>')
+                    .addClass('empty column')
                 row.append(columns)
             }
             board.append(row)
@@ -25,5 +25,9 @@ class Gamegrid {
     //  
     eventListeners() {
         let board = $(this.selector)
+
+        board.on('mouseenter', '.empty.column', function(){
+            console.log('here', this)
+        })
     } 
 }
