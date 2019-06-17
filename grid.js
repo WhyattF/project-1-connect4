@@ -27,6 +27,9 @@ class Gamegrid {
                     .addClass('empty column')
                     .on('click', function(){
                         $(this).addClass(`${self.color}`).removeClass('empty')
+
+                        //check for winner
+                        
                     self.executePlayerTurn()
                     })
 
@@ -34,6 +37,7 @@ class Gamegrid {
             }
             board.append(row)
         }
+
     } 
 
 
@@ -51,10 +55,14 @@ class Gamegrid {
                 this.isPlayer1Turn = !this.isPlayer1Turn
                 
             }  
+        const winner
         }
 
         // Set up loop make the move check for win
-        function winner() {
+        checkForWinner() {
+            
+        }
+                  
             verticalWin()
             horizontalWin()
             diagnalWinLeft()
