@@ -22,5 +22,8 @@ class Gamegrid {
             board.append(row)
         }
     }
-    //  Loop 
+    //  
+    eventListeners() {
+        let board = $(this.selector)
+    } 
 }
