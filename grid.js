@@ -24,11 +24,9 @@ class Gamegrid {
                 board.append(row)
             for (let columns = 0; columns < this.columns; columns++) {
                 const column = $('<div></div>')
-               
                     .addClass('empty column')
                     .on('click', function(){
                         $(this).addClass(`${self.color}`).removeClass('empty')
-                        console.log(self.isPlayer1Turn)
                     self.executePlayerTurn()
                     })
 
@@ -54,6 +52,10 @@ class Gamegrid {
                 
             }  
         }
+
+        // Set up loop make the move check for win 
+
+        // }
 
         
     }
