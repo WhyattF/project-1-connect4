@@ -21,10 +21,12 @@ class Gamegrid {
         for (let row = 0; row < this.rows; row++) {
             const row = $('<div>')
                 .addClass('row')
-                board.append(row)
+                // board.append(row)
             for (let columns = 0; columns < this.columns; columns++) {
                 const column = $('<div></div>')
                     .addClass('empty column')
+                    .attr('data-col', columns)
+                    .attr('data-row', row)
                     .on('click', function(){
                         $(this).addClass(`${self.color}`).removeClass('empty')
 
@@ -39,6 +41,18 @@ class Gamegrid {
         }
 
     } 
+
+    // function checkVertical($position) {
+    //     $pos = $position; 
+    //     $score = 0; 
+    //     while ($pos += 1 === 'red' || $pos -= 1 'red') {
+    //             $score += 1; 
+    //             if ($score === 4)
+    //             {
+                    
+    //             }
+    //     }
+    // }
 
 
     executePlayerTurn() {
@@ -55,46 +69,48 @@ class Gamegrid {
                 this.isPlayer1Turn = !this.isPlayer1Turn        
             }  
         
-        const winner = this.checkForWinner(
+        // const winner = this.checkForWinner(
            
-          )
-          if (winner) {
-            this.isGameOver = true;
-            alert(`Game Over! ${this.color} has won!`);
-            $('.column.empty').removeClass('empty');
-            return;
-          }
-        }
+        //   )
+        //   if (winner) {
+        //     this.isGameOver = true;
+        //     alert(`Game Over! ${this.color} has won!`);
+        //     $('.column.empty').removeClass('empty');
+        //     return;
+        //   }
+        // }
 
-        // Set up loop make the move check for win
-        checkForWinner(column, row) {
-            function checkWin(directionA, directionB) {
-                const total = 1 +
-                checkDirection(a) +
-                checkDirection(b)
-            if total >= 4 {
-                return ${this.color}
-            } else {
-                return null
-            }
+        // // Set up loop make the move check for win
+        // //function getCell(row,column)
+        // checkForWinner(column, row) {
+        //     function checkWin(directionA, directionB) {
+        //         const total = 1 +
+        //         checkDirection(a) +
+        //         checkDirection(b)
             
-            }
-            function verticalWin() {
+            //     if (total >= 4) {
+            //     return ${this.color}
+            // } else {
+            //     return null
+            // }
+            
+        //     }
+        //     function verticalWin() {
                 
-                return checkWin({i: -1, j: 0}, {i: 1, j:0})
-            }
-            return verticalWin()
-        }
+        //         return checkWin({i: -1, j: 0}, {i: 1, j:0})
+        //     }
+        //     return verticalWin()
+        // }
                   
-            horizontalWin()
-            diagnalWinLeft()
-            diagnalWinRight()
+        //     horizontalWin()
+        //     diagnalWinLeft()
+        //     diagnalWinRight()
 
-            return
-        }
-        function verticalWin() {
-            for (let i = 0; i < gamegrid.length; )
-        }
+        //     return
+        // }
+        // function verticalWin() {
+        //     for (let i = 0; i < gamegrid.length; )
+        // }
 
         
     }
@@ -118,6 +134,4 @@ class Gamegrid {
 
     //     board.on('mouseenter', '.empty.column', function(){
     //     console.log('here',this)
-    //     })
-
-
+        }
