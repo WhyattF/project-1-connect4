@@ -39,20 +39,18 @@ class Gamegrid {
             }
             board.append(row)
         }
-
     } 
 
-    // function checkVertical($position) {
-    //     $pos = $position; 
-    //     $score = 0; 
-    //     while ($pos += 1 === 'red' || $pos -= 1 'red') {
-    //             $score += 1; 
-    //             if ($score === 4)
-    //             {
-                    
-    //             }
-    //     }
-    // }
+    function checkHorizontal(columnIndex, color) {
+         score = 1
+        while ($(`.col[data-col='${columnIndex + 1}']`) === color || $(`.col[data-col='${columnIndex - 1}']`) === color ) {
+                $score += 1
+                if ($score === 4)
+                {
+                    return color
+                }
+        }
+    }
 
 
     executePlayerTurn() {
@@ -61,6 +59,8 @@ class Gamegrid {
             this.color = 'red'
             this.isPlayer1Turn = !this.isPlayer1Turn
             this.isPlayer2Turn = !this.isPlayer2Turn
+            this.position = 4 
+            checkHorizontal(this.position, this.color)
 
         } else if (this.isPlayer2Turn === true) {
                 
