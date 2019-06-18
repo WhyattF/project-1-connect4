@@ -29,7 +29,7 @@ class Gamegrid {
                         $(this).addClass(`${self.color}`).removeClass('empty')
 
                         //check for winner
-                        
+                        let winner = 
                     self.executePlayerTurn()
                     })
 
@@ -52,18 +52,40 @@ class Gamegrid {
                 
                 this.color = 'black'
                 this.isPlayer2Turn = !this.isPlayer2Turn
-                this.isPlayer1Turn = !this.isPlayer1Turn
-                
+                this.isPlayer1Turn = !this.isPlayer1Turn        
             }  
-        const winner
+        
+        const winner = this.checkForWinner(
+           
+          )
+          if (winner) {
+            this.isGameOver = true;
+            alert(`Game Over! ${this.color} has won!`);
+            $('.column.empty').removeClass('empty');
+            return;
+          }
         }
 
         // Set up loop make the move check for win
-        checkForWinner() {
+        checkForWinner(column, row) {
+            function checkWin(directionA, directionB) {
+                const total = 1 +
+                checkDirection(a) +
+                checkDirection(b)
+            if total >= 4 {
+                return ${this.color}
+            } else {
+                return null
+            }
             
+            }
+            function verticalWin() {
+                
+                return checkWin({i: -1, j: 0}, {i: 1, j:0})
+            }
+            return verticalWin()
         }
                   
-            verticalWin()
             horizontalWin()
             diagnalWinLeft()
             diagnalWinRight()
